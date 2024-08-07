@@ -10,4 +10,14 @@ class AuthController extends Controller
     {
         return view('frontend/login');
     }
+
+    public function register(Request $request)
+    {
+        return view('frontend/register');
+    }
+
+    public function forget_password(Request $request)
+    {
+        return view('frontend/forget_password');
+    }
 }
