@@ -40,7 +40,7 @@ class HomeController extends Controller
     public function show($id)
     {
         try {
-            $product = Product::findOfFail($id);
+            $product = Product::findOrFail($id);
             return view('frontend.show', compact('product'));
         } catch(ModelNotFoundException $e) {
             // Handle the case where the product id not found
