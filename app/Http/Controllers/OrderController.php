@@ -11,7 +11,7 @@ use App\Models\Order;
 use App\Models\Cart;
 use App\Models\OrderHistory;
 
-use App\Enums\OrderStatus;
+use App\Enum\OrderStatus;
 
 class OrderController extends Controller
 {
@@ -72,6 +72,7 @@ class OrderController extends Controller
                     'qty' => $row->qty,
                     'unit_price' => $row->product->price,
                     'amount' => $row->qty * $row->product->price
+                    
                 ]);
             }
 
