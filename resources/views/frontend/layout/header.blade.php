@@ -1,12 +1,5 @@
-{{-- <h1>Header</h1> --}}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
     <style>
         * {box-sizing: border-box;}
 
@@ -50,16 +43,14 @@ body {
 .header-right {
   float: right;
 }
-    </style>
-</head>
-<body>
+  </style>
+
     <div class="header">
-        <a href="#default" class="logo">CompanyLogo</a>
+        <a href="#default" class="logo">
+        <img src="{{ asset('storage/logo/weblogo.png') }}" style="width:140px; height:40px;"></a>
         <div class="header-right">
           <a class="active" href="#home">Home</a>
           <a href="#contact">Contact</a>
           <a href="#about">About</a>
         </div>
     </div>
-</body>
-</html>
