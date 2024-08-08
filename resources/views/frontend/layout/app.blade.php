@@ -21,7 +21,7 @@
     @include('frontend.layout.topbar')
 
     <!-- Include the Search partial -->
-    <!-- @include('frontend.layout.search') -->
+    @include('frontend.layout.search')
 
     @yield('content')
 
