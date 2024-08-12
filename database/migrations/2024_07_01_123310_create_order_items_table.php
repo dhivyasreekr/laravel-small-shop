@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->decimal('amount',10,2);
 
-            $table->integer('discount');
+            $table->integer('discount')->nullable();
             
             $table->timestamps();
         });
