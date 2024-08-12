@@ -98,7 +98,9 @@ class OrderController extends Controller
     {
         $user = Auth::user();
 
-        $order = Order::where('customer_id', $user->id)->first();
+        $order = Order::where('customer_id', $user->id)->first()
+                ->orderBy('created_at', 'desc')
+                ->first();
 
         // dd($order);
 
