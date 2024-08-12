@@ -61,9 +61,9 @@ class User extends Authenticatable
         return env('DOMAIN_URL') . Storage::url($this->photo_path);
     }
 
-    public function cart()
+    public function cartItems()
     {
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(Cart::class, 'customer_id');
     }
 
     public function order()
