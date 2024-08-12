@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use NumberToWords\NumberToWords;
 
 class Order extends Model
 {
@@ -24,6 +25,8 @@ class Order extends Model
         'payment_method'
     ];
 
+    protected $dates =['order_date'];
+
     public static function boot()
     {
         parent::boot();
@@ -39,7 +42,51 @@ class Order extends Model
             // Set the order_date attribute to the current date and time
             $order->order_date = now();
         });
+
+        // Adding an event listener for the "created" event
+        static::created(function ($order) {
+
+            // dd($order);
+
+            // Record initial order status and payment method when an order is created
+            $history = new OrderHistory([
+                'order_id' => $order->id,
+                'order_status' => $order->order_status,     
+                'payment_method' => $order->payment_method, // Record payment method           
+            ]);
+            
+            $order->history()->save($history);                        
+
+        });
+
+        
+
+        // Adding an event listener for the "updating" event
+        static::updating(function ($order) {
+            $changedAttributes = $order->getDirty();
+
+            // dd($changedAttributes);
+
+            if (array_key_exists('order_status', $changedAttributes) 
+            || array_key_exists('payment_method', $changedAttributes)
+            ) {
+                $order->recordStatusChange($changedAttributes);
+            }
+        });
     }
+
+    protected function recordStatusChange($changedAttributes)
+    {
+        $history = new OrderHistory([
+            'order_id' => $this->id,
+            'order_status' => $this->order_status, // Use the current status
+            'payment_method' => $this->payment_method, // Use the current payment method
+        ]);
+
+        $this->history()->save($history);
+    }
+
+    
 
         public function customer(): BelongsTo
         {
@@ -89,7 +136,13 @@ class Order extends Model
         {
             $numberToWords = new NumberToWords();
             $transformer = $numberToWords->getNumberTransformer('en');
-
+            $taxAmount = $this->calculaterSGST() + $this->calculaterCGST(); 
             return $transformer->toWords($taxAmount);
         }
+
+        public function history()
+        {
+            return $this->hasMany(OrderHistory::class, 'order_id');
+        }
 }
+
