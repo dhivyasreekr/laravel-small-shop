@@ -86,6 +86,15 @@ class DatabaseSeeder extends Seeder
                 'qty' => 500,
                 'alert_stock' => 10,
             ],
+            [
+                'category_id' => 2,
+                'brand_id' => 6,
+                'name' => 'Eggs',
+                'description' => 'xyz',
+                'price' => 6,
+                'qty' => 500,
+                'alert_stock' => 10,
+            ],
             
         ];
 
