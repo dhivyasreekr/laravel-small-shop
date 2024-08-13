@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +63,81 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+
+
+
+
+# Small-Shop Project
+
+Welcome to the Small-Shop project! This is a simple e-commerce application built with Laravel. It allows users to browse products, manage their cart, and make purchases.
+
+## laravel-small-shop
+
+### Features
+
+- Product catalog
+- Shopping cart functionality
+- User authentication and profile management
+- Order management
+
+### Setup Instructions
+
+#### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Ensure you have Python installed. You can download it from [xampp](https://www.apachefriends.org/).
+
+- Ensure you have Python installed. You can download it from [composer](https://getcomposer.org/).
+
+- Ensure you have Python installed. You can download it from [vs code](https://code.visualstudio.com/).
+
+
+### Install dependencies
+
+### Go to the terminal
+
+1. **Create Laravel Project**
+
+    ```
+    composer create-project laravel/laravel laravel_teach_ease
+    ```
+
+2. **Navigate To The Project Folder**
+
+
+    - for windows
+
+    ```
+      cd laravel_teach_ease
+    ```
+
+    - for macos
+
+    ```
+      cd laravel_teach_ease
+    ```
+
+5. ***Run the Development Server***
+
+    ***Start the Laravel development server***
+
+     ```
+        php artisan serve
+     ```
+
+6. ***Access the Application***
+
+    Open Your Browser and Navigate to:
+
+     ```
+    http://127.0.0.1:8000/
+    ```
+
+    To Open the Laravel Interface Design,and go to,
+
+     ``` 
+      http://127.0.0.1:8000/admin
+     ```
+
