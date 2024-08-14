@@ -101,7 +101,7 @@ Before you begin, ensure you have met the following requirements:
 1. **Create Laravel Project**
 
     ```
-    composer create-project laravel/laravel laravel_teach_ease
+    composer create-project laravel/laravel laravel-small-shop
     ```
 
 2. **Navigate To The Project Folder**
@@ -110,13 +110,13 @@ Before you begin, ensure you have met the following requirements:
     - for windows
 
     ```
-      cd laravel_teach_ease
+      cd laravel-small-shop
     ```
 
     - for macos
 
     ```
-      cd laravel_teach_ease
+      cd laravel-small-shop
     ```
 
 5. ***Run the Development Server***
