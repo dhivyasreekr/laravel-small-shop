@@ -143,5 +143,5 @@ Before you begin, ensure you have met the following requirements:
      ```
 
 7. ***Image
-   ![image](public\storage\logo\weblogo.png)
+   ![image](public/storage/logo/weblogo.png)
 
