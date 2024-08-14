@@ -139,5 +139,9 @@ Before you begin, ensure you have met the following requirements:
 
      ``` 
       http://127.0.0.1:8000/admin
+
      ```
+
+7. ***Image
+   ![image](public\storage\logo\weblogo.png)
 
